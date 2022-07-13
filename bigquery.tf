@@ -105,24 +105,6 @@ resource "google_bigquery_table" "tweets_table" {
                         "type": "INT64",
                         "mode": "NULLABLE",
                         "description": "Tweet id"
-                      },
-                      {
-                        "name": "person_id",
-                        "type": "INT64",
-                        "mode": "NULLABLE",
-                        "description": "Person id"
-                      },
-                      {
-                        "name": "company_id",
-                        "type": "INT64",
-                        "mode": "NULLABLE",
-                        "description": "Company id"
-                      },
-                      {
-                        "name": "loaded",
-                        "type": "TIMESTAMP",
-                        "mode": "NULLABLE",
-                        "description": "Timestamp when Tweet was loaded"
                       }
                     ]
                     EOF
