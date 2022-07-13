@@ -6,7 +6,7 @@ variable "project" {
 
 variable "location" {
   type        = string
-  default = "europe-west3"
+  default     = "europe-west3"
   description = "Project location"
 }
 
@@ -19,7 +19,7 @@ variable "project_number" {
 variable "name_prefix" {
   description = "prefix attached to every resource created."
   type        = string
-  default = "myprojectprefix"
+  default     = "myprojectprefix"
 }
 
 # resources
@@ -30,7 +30,7 @@ variable "cloud_function_repo_name" {
 
 variable "twitter_api_token" {
   description = "Twitter API token"
-  type = string
+  type        = string
   sensitive   = true
 }
 
@@ -39,5 +39,5 @@ variable "twitter_api_token" {
 variable "common_labels" {
   description = "Common tags for all resources."
   type        = map(string)
-  default     = {"project":"simple-data-stack", "env": "dev"}
+  default     = { "project" : "simple-data-stack", "env" : "dev" }
 }

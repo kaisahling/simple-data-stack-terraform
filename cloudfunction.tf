@@ -17,9 +17,10 @@ resource "google_cloudfunctions_function" "cloud_function" {
   }
 
   environment_variables = {
-    PROJECT_NUMBER    = var.project_number
-    STORAGE_BUCKET              = google_storage_bucket.twitter_data.name
-    BEARER_TOKEN  = var.twitter_api_token
+    PROJECT_NUMBER = var.project_number
+    STORAGE_BUCKET = google_storage_bucket.twitter_data.name
+    BEARER_TOKEN   = var.twitter_api_token
+    TWITTER_ID     = "44196397"
   }
 
   labels = merge(var.common_labels, {
