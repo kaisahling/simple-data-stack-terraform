@@ -5,7 +5,7 @@ resource "google_cloud_scheduler_job" "cloud_function_scheduler" {
   schedule         = "0 1 * * *"
   time_zone        = "Europe/Berlin"
   region           = var.location
-  attempt_deadline = "540s"
+  attempt_deadline = "30s"
   project          = var.project
 
   retry_config {
@@ -13,7 +13,7 @@ resource "google_cloud_scheduler_job" "cloud_function_scheduler" {
   }
 
   http_target {
-    http_method = "POST"
+    http_method = "GET"
     uri         = "https://${var.location}-${var.project}.cloudfunctions.net/${google_cloudfunctions_function.cloud_function.name}"
     headers = {
       Content-Type = "application/json"
