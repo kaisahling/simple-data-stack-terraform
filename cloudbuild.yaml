@@ -10,7 +10,7 @@ steps:
 
   - id: 'terraform apply'
     name: 'hashicorp/terraform:0.14.6'
-    args: [ 'apply','-auto-approve', '-var-file=variables.tfvars', '-var="project=$PROJECT_ID"', '-var="project_number=$PROJECT_NUMBER"', '-var="twitter_api_token=$$TWITTER_API_TOKEN"']
+    args: [ 'apply','-auto-approve', '-var-file=vars.tfvars', '-var="project=$PROJECT_ID"', '-var="project_number=$PROJECT_NUMBER"', '-var="twitter_api_token=$$TWITTER_API_TOKEN"']
     secretEnv: ['TWITTER_API_TOKEN']
 
 availableSecrets:
