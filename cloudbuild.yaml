@@ -5,7 +5,7 @@ steps:
 
   - id: 'terraform plan'
     name: 'hashicorp/terraform:0.14.6'
-    args: [ 'plan', '-var-file=variables.tfvars', '-var="project=$PROJECT_ID"', '-var="project_number=$PROJECT_NUMBER"', '-var="twitter_api_token=$$TWITTER_API_TOKEN"' ]
+    args: [ 'plan', '-var-file=vars.tfvars', '-var="project=$PROJECT_ID"', '-var="project_number=$PROJECT_NUMBER"', '-var="twitter_api_token=$$TWITTER_API_TOKEN"' ]
     secretEnv: ['TWITTER_API_TOKEN']
 
   - id: 'terraform apply'
