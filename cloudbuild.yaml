@@ -15,5 +15,5 @@ steps:
 
 availableSecrets:
   secretManager:
-  - versionName: projects/$PROJECT_ID/secrets/twitter_api_token
+  - versionName: projects/$PROJECT_ID/secrets/twitter_api_token/versions/latest
     env: 'TWITTER_API_TOKEN'
