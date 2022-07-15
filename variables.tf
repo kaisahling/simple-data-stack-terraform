@@ -1,7 +1,6 @@
 variable "project" {
   type        = string
   description = "Project id"
-  sensitive   = true
 }
 
 variable "location" {
@@ -13,7 +12,6 @@ variable "location" {
 variable "project_number" {
   type        = string
   description = "Project number"
-  sensitive   = true
 }
 
 variable "name_prefix" {
