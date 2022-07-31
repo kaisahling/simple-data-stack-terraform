@@ -31,6 +31,12 @@ resource "google_project_iam_member" "editor_to_compute_cloud_build_service_acco
   member  = "serviceAccount:${var.project_number}@cloudbuild.gserviceaccount.com"
 }
 
+resource "google_project_iam_member" "secretmanager_to_compute_cloud_build_service_account" {
+  role    = "roles/secretmanager.secretAccessor"
+  project = var.project
+  member  = "serviceAccount:${var.project_number}@cloudbuild.gserviceaccount.com"
+}
+
 # dbt scheduler
 resource "google_service_account" "dbt_scheduler_service_account" {
   account_id   = "dbt-scheduler-sa"
