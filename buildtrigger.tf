@@ -37,3 +37,17 @@ resource "google_cloudbuild_trigger" "infrastructure_build_trigger" {
 
 
 }
+
+resource "google_cloudbuild_trigger" "infrastructure_build_trigger" {
+  project = var.project
+
+  trigger_template {
+    branch_name = local.branch
+    repo_name   = "github_kaisahling_simple-data-stack-dbt"
+  }
+
+  filename = "cloudbuild.yaml"
+  name     = "dbt-build-trigger"
+
+
+}
