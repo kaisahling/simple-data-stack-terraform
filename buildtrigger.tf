@@ -38,7 +38,7 @@ resource "google_cloudbuild_trigger" "infrastructure_build_trigger" {
 
 }
 
-resource "google_cloudbuild_trigger" "infrastructure_build_trigger" {
+resource "google_cloudbuild_trigger" "dbt_build_trigger" {
   project = var.project
 
   trigger_template {
