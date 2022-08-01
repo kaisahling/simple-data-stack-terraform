@@ -42,7 +42,7 @@ resource "google_cloud_scheduler_job" "dbt_scheduler" {
 
   http_target {
     http_method = "GET"
-    uri         = "https://asdf"
+    uri         = "https://simple-data-stack-dbt-service-supsq3gcba-ey.a.run.app"
     headers = {
       Content-Type = "application/json"
     }
