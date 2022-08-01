@@ -1,17 +1,17 @@
 steps:
   - id: 'terraform init'
-    name: 'hashicorp/terraform:0.14.6'
+    name: 'hashicorp/terraform:1.0.0'
     args: [ 'init']
 
   - id: 'terraform plan'
-    name: 'hashicorp/terraform:0.14.6'
+    name: 'hashicorp/terraform:1.0.0'
     args: [ 'plan', '-var-file=vars.tfvars', '-var=project=$PROJECT_ID', '-var=project_number=$PROJECT_NUMBER', '-var=twitter_api_token=$$TWITTER_API_TOKEN' ]
     secretEnv: ['TWITTER_API_TOKEN']
 
 # You must use bash to access secret env vars
   - id: 'terraform apply'
     name: 'hashicorp/terraform:1.0.0'
-    entrypoint: bash
+    entrypoint: sh
     args:
       - -c
       - |
