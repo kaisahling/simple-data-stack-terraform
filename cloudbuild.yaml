@@ -10,7 +10,7 @@ steps:
 
 # You must use bash to access secret env vars
   - id: 'terraform apply'
-    name: 'hashicorp/terraform:0.14.6'
+    #name: 'hashicorp/terraform:0.14.6'
     entrypoint: bash
     args:
       - -c
