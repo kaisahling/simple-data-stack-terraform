@@ -8,9 +8,18 @@ steps:
     args: [ 'plan', '-var-file=vars.tfvars', '-var=project=$PROJECT_ID', '-var=project_number=$PROJECT_NUMBER', '-var=twitter_api_token=$$TWITTER_API_TOKEN' ]
     secretEnv: ['TWITTER_API_TOKEN']
 
+# You must use bash to access secret env vars
   - id: 'terraform apply'
     name: 'hashicorp/terraform:0.14.6'
-    args: [ 'apply','-auto-approve', '-var-file=vars.tfvars', '-var=project=$PROJECT_ID', '-var=project_number=$PROJECT_NUMBER', '-var=twitter_api_token=$$TWITTER_API_TOKEN']
+    entrypoint: bash
+    args:
+      - -c
+      - |
+        terraform apply --auto-approve \
+        -var-file=vars.tfvars \
+        -var=project=$PROJECT_ID \
+        -var=project_number=$PROJECT_NUMBER \
+        -var=twitter_api_token=$$TWITTER_API_TOKEN
     secretEnv: ['TWITTER_API_TOKEN']
 
 availableSecrets:
