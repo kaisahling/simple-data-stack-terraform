@@ -49,5 +49,9 @@ resource "google_cloudbuild_trigger" "dbt_build_trigger" {
   filename = "cloudbuild.yaml"
   name     = "dbt-build-trigger"
 
+  substitutions = {
+   _SA  = google_service_account.dbt_service_account.email
+  }
+
 
 }
